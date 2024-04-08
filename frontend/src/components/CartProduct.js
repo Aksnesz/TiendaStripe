@@ -31,7 +31,7 @@ function CartProduct(props) {
         Quantity: {quantity}
       </h6>
       <p>
-      {(quantity * productData.price).toFixed(2).toString().replace(".", ",").replace(/\,00/,'')}€
+      {(quantity * productData.price).toFixed(2).toString().replace(".", ",").replace(/\,00/,'')} MXN
       </p>
       <button className="btn btn-warning" onClick={() => cart.deleteItem(id)}>
         Remove from cart

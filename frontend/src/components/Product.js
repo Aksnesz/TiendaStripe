@@ -7,20 +7,21 @@ function Product(props) {
   const quantity = cart.getQuantity(product.id);
 
   return (
-    <div className="card mb-2 h-100">
+    <div className="card mb-2 h-100 border border-2 p-3">
       <img
         src={product.image}
-        className="card-img-top img-fluid w-75"
+        className="cardImage img-fluid"
         alt={product.name}
+        style={{ maxHeight: "200px", objectFit: "cover" }}
       />
-      <div className="card-body">
+      <div className="card-body d-flex flex-column p-3">
         <h5 className="card-title">{product.name}</h5>
         <p className="card-text">{product.price}$</p>
-        {quantity > 0 ? (
-          <div className="row">
+        {quantity > 0? (
+          <div className="row mt-auto">
             <div className="row m-auto">
               <div className="col-6">In cart: {quantity}</div>
-              <div className="col-6">
+              <div className="col-6 d-flex justify-content-center">
                 <button
                   className="btn btn-primary mx-2"
                   onClick={() => cart.addItem(product.id)}
@@ -46,7 +47,7 @@ function Product(props) {
           </div>
         ) : (
           <button
-            className="btn btn-primary"
+            className="btn btn-primary mt-auto"
             onClick={() => cart.addItem(product.id)}
           >
             Add to cart

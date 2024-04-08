@@ -89,7 +89,7 @@ function Navbar() {
                 <div className="modal-content">
                   <div className="modal-header bg-dark text-white">
                     <h1 className="modal-title fs-5" id="exampleModalLabel">
-                      Shopping Cart
+                      Carrito de Compras
                     </h1>
                     <button
                       type="button"
@@ -112,11 +112,11 @@ function Navbar() {
                         <h4>
                           Total:{" "}
                           {total.toFixed(2).toString().replace(".", ",").replace(/\,00/, "")}
-                          mxn
+                             mxn
                         </h4>
                       </div>
                     ) : (
-                      <h4 className="text-danger">Cart is empty</h4>
+                      <h4 className="text">Agrega algo al carrito :)</h4>
                     )}
                   </div>
                   <div className="modal-footer">
@@ -126,7 +126,7 @@ function Navbar() {
                         className="btn btn-success"
                         onClick={checkout}
                       >
-                        Checkout
+                        Comprar
                       </button>
                     ) : (
                       <button
@@ -134,7 +134,7 @@ function Navbar() {
                         className="btn btn-secondary"
                         data-bs-dismiss="modal"
                       >
-                        Close
+                        Cerrar
                       </button>
                     )}
                   </div>

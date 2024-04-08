@@ -16,11 +16,11 @@ function Product(props) {
       />
       <div className="card-body d-flex flex-column p-3">
         <h5 className="card-title">{product.name}</h5>
-        <p className="card-text">{product.price}$</p>
+        <p className="card-text">{product.price} $</p>
         {quantity > 0? (
           <div className="row mt-auto">
             <div className="row m-auto">
-              <div className="col-6">In cart: {quantity}</div>
+              <div className="col-6">En el carrito: {quantity}</div>
               <div className="col-6 d-flex justify-content-center">
                 <button
                   className="btn btn-primary mx-2"
@@ -41,7 +41,7 @@ function Product(props) {
                 className="btn btn-danger w-75 mt-4 m-auto"
                 onClick={() => cart.deleteItem(product.id)}
               >
-                Remove from cart
+                Eliminar del carrito
               </button>
             </div>
           </div>

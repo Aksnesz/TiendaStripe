@@ -19,22 +19,22 @@ function CartProduct(props) {
   }, [id]);
 
   if (!productData) {
-    return <div>Loading product data...</div>;
+    return <div>Cargando...</div>;
   }
 
   return (
     <div>
-      <h5 className="" style={{color: "purple"}}>
+      <h5 className="" style={{color: "blue"}}>
         {productData.name}
       </h5>
       <h6>
-        Quantity: {quantity}
+        Cantidad: {quantity}
       </h6>
       <p>
-      {(quantity * productData.price).toFixed(2).toString().replace(".", ",").replace(/\,00/,'')} MXN
+      {(quantity * productData.price).toFixed(2).toString().replace(".", ",").replace(/\,00/,'')} mxn
       </p>
-      <button className="btn btn-warning" onClick={() => cart.deleteItem(id)}>
-        Remove from cart
+      <button className="btn btn-danger" onClick={() => cart.deleteItem(id)}>
+        Eliminar
       </button>
       <hr />
     </div>

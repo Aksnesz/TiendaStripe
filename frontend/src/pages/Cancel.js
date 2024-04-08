@@ -5,9 +5,9 @@ function Cancel() {
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 text-center">
-          <h1 className="mt-3">Purchase cancelled!</h1>
-          <a href="/" className="btn btn-danger mt-2">
-            Back to home
+          <h1 className="mt-3">Compra cancelada</h1>
+          <a href="/" className="btn btn-warning mt-2">
+            Regresar al inicio
           </a>
         </div>
       </div>

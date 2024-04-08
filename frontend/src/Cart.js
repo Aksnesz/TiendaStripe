@@ -59,14 +59,13 @@ export function CartProvider({ children }) {
     );
   }
 
-  function getTotal() {
+  async function getTotal() {
     let total = 0;
-    cartProducts.map(async (cartItem) => {
+    const promises = cartProducts.map(async (cartItem) => {
       const productData = await getProductData(cartItem.id);
       total += productData.price * cartItem.quantity;
-      console.log(productData.price)
     });
-    console.log(total)
+    await Promise.all(promises);
     return total;
   }
 

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Cart } from "../Cart";
 import CartProduct from "../components/CartProduct";
 
@@ -8,6 +8,17 @@ function Navbar() {
     (sum, product) => sum + product.quantity,
     0
   );
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const fetchTotal = async () => {
+      const total = await cart.getTotal();
+      setTotal(total);
+    };
+
+    fetchTotal();
+  }, [cart]);
+
 
   const checkout = async () => {
     await fetch("http://localhost:4000/checkout", {
@@ -96,13 +107,8 @@ function Navbar() {
 
                         <h4>
                           Total:{" "}
-                          {cart
-                            .getTotal()
-                            .toFixed(2)
-                            .toString()
-                            .replace(".", ",")
-                            .replace(/\,00/, "")}
-                          €
+                          {total.toFixed(2).toString().replace(".", ",").replace(/\,00/, "")}
+                          mxn
                         </h4>
                       </div>
                     ) : (

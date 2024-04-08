@@ -61,12 +61,12 @@ export function CartProvider({ children }) {
 
   function getTotal() {
     let total = 0;
-
-    cartProducts.map((cartItem) => {
-      const productData = getProductData(cartItem.id);
+    cartProducts.map(async (cartItem) => {
+      const productData = await getProductData(cartItem.id);
       total += productData.price * cartItem.quantity;
+      console.log(productData.price)
     });
-
+    console.log(total)
     return total;
   }
 

@@ -1,12 +1,26 @@
 import { Cart } from "../Cart";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { getProductData } from "../Products";
 
 function CartProduct(props) {
   const cart = useContext(Cart);
   const id = props.id;
   const quantity = props.quantity;
-  const productData = getProductData(id);
+
+  const [productData, setProductData] = useState(null);
+
+  useEffect(() => {
+    const fetchProductData = async () => {
+      const data = await getProductData(id);
+      setProductData(data);
+    };
+
+    fetchProductData();
+  }, [id]);
+
+  if (!productData) {
+    return <div>Loading product data...</div>;
+  }
 
   return (
     <div>

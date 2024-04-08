@@ -1,7 +1,6 @@
 import stripe from 'stripe';
 const stripeClient = stripe('sk_test_51P2R7LCPAFoki0Hw0mQY6GyvhOJxJNMruYFTq7RhMJQ8GJbB9g7HkNm1jWAsqbmiSE6EZ0WhKQge9byjj463WnSe00cLDtmLOm');
 
-// Esta función obtiene todos los productos y precios de Stripe
 async function getProductsFromStripe() {
   const products = await stripeClient.products.list();
   const prices = await stripeClient.prices.list();
@@ -17,7 +16,6 @@ async function getProductsFromStripe() {
   });
 }
 
-// Esta función busca un producto por ID utilizando los productos obtenidos de Stripe
 async function getProductData(id) {
   const arrayProducts = await getProductsFromStripe();
   const productData = arrayProducts.find((product) => product.id === id);

@@ -47,10 +47,10 @@ function Product(props) {
           </div>
         ) : (
           <button
-            className="btn btn-primary mt-auto"
+            className="btn btn-warning mt-auto"
             onClick={() => cart.addItem(product.id)}
           >
-            Add to cart
+            Añadir al carrito
           </button>
         )}
       </div>

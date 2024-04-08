@@ -3,8 +3,9 @@
   }
 
   .navbar-brand {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Amatic SC';
     font-size: 25px;
+    color: rgb(0, 0, 0);
   }
   .nav-link {
     color: #fff;
@@ -23,7 +24,7 @@
   }
 
   .navbar {
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #ffc106;
   }
 
   .navbar {

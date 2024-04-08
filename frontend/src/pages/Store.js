@@ -1,6 +1,8 @@
 import { getProductsFromStripe } from "../Products";
 import Product from "../components/Product";
 import { useState, useEffect } from "react";
+import "./Store.css"
+
 
 function Store() {
   const [products, setProducts] = useState([]);
@@ -13,7 +15,7 @@ function Store() {
 
   return (
     <div>
-      <h1 className="mt-3">Beli Store</h1>
+      <h1 className="mt-3"></h1>
       <div className="row g-4 mt-2 mb-4">
         {products.map((product, index) => (
           <div className="col-md-4" key={index}>

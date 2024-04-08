@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Cart } from "../Cart";
 import CartProduct from "../components/CartProduct";
+import "./Navbar.css";
 
 function Navbar() {
   const cart = useContext(Cart);
@@ -44,7 +45,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          Tienda de Guitarras
+        El Refugio del Guitarrista
         </a>
         <button
           className="navbar-toggler"
@@ -61,7 +62,7 @@ function Navbar() {
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
-                Home
+                
               </a>
             </li>
           </ul>
@@ -72,7 +73,7 @@ function Navbar() {
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
-              Cart ({productsCount}) Items
+              Carrito ({productsCount})
             </button>
 
             <div

@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #333;
+  }
+
+  .navbar-brand {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+  }
+  .nav-link {
+    color: #fff;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
+
+  .nav-link {
+    padding: 10px 20px;
+  }
+
+  .btn-dark {
+    background-color: #000;
+  }
+
+  .navbar {
+    border-bottom: 3px solid #ff0000;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }

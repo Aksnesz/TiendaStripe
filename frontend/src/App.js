@@ -8,12 +8,18 @@ import Store from "./pages/Store";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import CartProvider from "./Cart";
+import { AuthProvider } from "./firebase/AuthContext";
+import FormsFirebase from './components/formularioAuth';
+
+
 
 function App() {
   return (
     <div>
       <CartProvider>
-        <Navbar />
+        <AuthProvider>
+        <FormsFirebase/>
+        </AuthProvider>
         <div className="container">
           <BrowserRouter>
             <Routes>

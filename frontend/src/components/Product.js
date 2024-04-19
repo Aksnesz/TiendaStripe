@@ -47,7 +47,13 @@ function Product(props) {
                       className="btn btn-primary"
                       onClick={() => cart.addItem(product.id)}
                     >
-                      Agregar más al carrito
+                      +
+                    </button>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => cart.removeItem(product.id)}
+                    >
+                      -
                     </button>
                   </div>
                 ) : (
@@ -70,3 +76,4 @@ function Product(props) {
 }
 
 export default Product;
+

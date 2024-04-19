@@ -10,6 +10,7 @@ async function getProductsFromStripe() {
     return {
       id: price.id,
       name: product.name,
+      description: product.description,
       price: price.unit_amount / 100,
       image: product.images[0] || '',
     };

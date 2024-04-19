@@ -17,9 +17,7 @@ function App() {
   return (
     <div>
       <CartProvider>
-        <AuthProvider>
-        <FormsFirebase/>
-        </AuthProvider>
+        <Navbar />
         <div className="container">
           <BrowserRouter>
             <Routes>

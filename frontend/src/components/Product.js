@@ -1,61 +1,88 @@
+import React, { useState, useContext } from "react";
 import { Cart } from "../Cart";
-import { useContext } from "react";
 
 function Product(props) {
   const { product } = props;
   const cart = useContext(Cart);
   const quantity = cart.getQuantity(product.id);
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <div className="card mb-2 h-100 border border-2 p-3">
-      <img
-        src={product.image}
-        className="cardImage img-fluid"
-        alt={product.name}
-        style={{ maxHeight: "200px", objectFit: "cover" }}
-      />
-      <div className="card-body d-flex flex-column p-3">
-        <h5 className="card-title">{product.name}</h5>
-        <p className="card-text">{product.price}$</p>
-        {quantity > 0? (
-          <div className="row mt-auto">
-            <div className="row m-auto">
-              <div className="col-6">In cart: {quantity}</div>
-              <div className="col-6 d-flex justify-content-center">
-                <button
-                  className="btn btn-primary mx-2"
-                  onClick={() => cart.addItem(product.id)}
-                >
-                  +
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-primary mx-2"
-                  onClick={() => cart.removeItem(product.id)}
-                >
-                  -
+      <div 
+      style={{   alignContent: "center", fontSize: "medium" }}
+      onClick={toggleModal}>
+        <img
+          src={product.image}
+          className="cardImage img-fluid"
+          alt={product.name}
+          style={{ maxHeight: "200px", objectFit: "cover", cursor: "pointer" }}
+        />
+        <b>{product.name}</b>
+      </div>
+      {showModal && (
+        <div className="modal" tabIndex="-1" role="dialog" style={{ display: "block" }}>
+          <div className="modal-dialog" role="document" style={{ marginTop: "15%" }}>
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{product.name}</h5>
+                <button type="button" className="close" onClick={toggleModal}>
+                  <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <button
-                type="button"
-                className="btn btn-danger w-75 mt-4 m-auto"
-                onClick={() => cart.deleteItem(product.id)}
-              >
-                Remove from cart
-              </button>
+              <div className="modal-body" style={{ textAlign: "center" }}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{ maxWidth: "100%", maxHeight: "300px", objectFit: "contain" }}
+                  onClick={toggleModal}
+                />
+                <p
+                style={{ fontSize: "large" }}
+                ><b>Precio: $ {product.price} </b></p>
+                <p
+                style={{ textAlign: "justify" }}
+                >{product.description}</p>
+                {quantity > 0 ? (
+                  
+                  <div>
+                    <p>En el carrito: {quantity}</p>
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => cart.addItem(product.id)}
+                    >
+                      +
+                    </button>
+                       
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => cart.removeItem(product.id)}
+                    >
+                      -
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => cart.addItem(product.id)}
+                  >
+                    Añadir al carrito
+                  </button>
+                )}
+              </div>
             </div>
           </div>
-        ) : (
-          <button
-            className="btn btn-warning mt-auto"
-            onClick={() => cart.addItem(product.id)}
-          >
-            Añadir al carrito
-          </button>
-        )}
-      </div>
+        </div>
+      )}
+      {/* Fondo sombreado */}
+      {showModal && <div className="modal-backdrop fade show" onClick={toggleModal}></div>}
     </div>
   );
 }
 
 export default Product;
+

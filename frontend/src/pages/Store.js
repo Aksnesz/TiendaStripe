@@ -27,7 +27,7 @@ function Store() {
     setFilteredProducts(filtered);
     setNoResults(filtered.length === 0);
   };
-  //Comentario para ver si se sube a github
+
   return (
     <div>
       <Navbar onSearchChange={handleSearchChange} />
@@ -49,4 +49,5 @@ function Store() {
     </div>
   );
 }
+
 export default Store;

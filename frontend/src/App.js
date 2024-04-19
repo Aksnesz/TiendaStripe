@@ -17,7 +17,6 @@ function App() {
   return (
     <div>
       <CartProvider>
-        <Navbar />
         <div className="container">
           <BrowserRouter>
             <Routes>

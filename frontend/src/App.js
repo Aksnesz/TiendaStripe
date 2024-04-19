@@ -16,6 +16,7 @@ import FormsFirebase from './components/formularioAuth';
 function App() {
   return (
     <div>
+      <AuthProvider>
       <CartProvider>
         <div className="container">
           <BrowserRouter>
@@ -27,6 +28,7 @@ function App() {
           </BrowserRouter>
         </div>
       </CartProvider>
+      </AuthProvider>
     </div>
   );
 }

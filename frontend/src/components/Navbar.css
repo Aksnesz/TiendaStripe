@@ -90,3 +90,11 @@
 a:link{
   text-decoration:none;
 }
+
+.boton-google {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-right: 0px;
+  vertical-align: middle;
+}

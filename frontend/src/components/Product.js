@@ -21,6 +21,7 @@ function Product(props) {
           className="cardImage img-fluid"
           alt={product.name}
           style={{ maxHeight: "200px", objectFit: "cover", cursor: "pointer" }}
+          draggable="false"
         />
         <b>{product.name}</b>
       </div>
@@ -40,7 +41,10 @@ function Product(props) {
                   alt={product.name}
                   style={{ maxWidth: "100%", maxHeight: "300px", objectFit: "contain" }}
                   onClick={toggleModal}
+                  draggable="false"
+
                 />
+
                 <p
                 style={{ fontSize: "large" }}
                 ><b>Precio: $ {product.price} </b></p>

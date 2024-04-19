@@ -3,8 +3,9 @@ import { Cart } from "../Cart";
 import CartProduct from "../components/CartProduct";
 import "./Navbar.css";
 
-function Navbar({ onSearchChange }) {
+function Navbar({ onSearchChange, handleLogout }) {
   const cart = useContext(Cart);
+  
   const productsCount = cart.items.reduce(
     (sum, product) => sum + product.quantity,
     0
@@ -163,6 +164,11 @@ function Navbar({ onSearchChange }) {
               </div>
             </div>
           </ul>
+          <li className="nav-item">
+                                <a className="navsesion" href="" onClick={handleLogout}>
+                                    Cerrar sesion
+                                </a>
+                            </li>
         </div>
       </div>
     </nav>

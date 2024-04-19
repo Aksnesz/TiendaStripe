@@ -1,8 +1,10 @@
 import React from 'react';
+import  Navbar from "../components/Navbar";
+
 
 function Cancel() {
   return (
-    <div className="container">
+    <><Navbar /><div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 text-center">
           <h1 className="mt-3">Compra cancelada</h1>
@@ -11,7 +13,7 @@ function Cancel() {
           </a>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 

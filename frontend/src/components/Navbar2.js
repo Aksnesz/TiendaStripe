@@ -50,15 +50,24 @@ function Navbar2({ handleGoogle, handleLogout }) {
         <a className="navbar-brand" href="/">
         El Refugio del Guitarrista
         </a>
-        <ul className="navbar-nav">
+        <ul className="navbar-nav"
+        style={{ paddingTop: ".5rem"}}
+        >
                         <li className="nav-item">
                             <a className="navsesion" href="" onClick={handleGoogle}>
                 
-                <span className="navsesion">Iniciar sesión</span>
+                <span className=""
+                style={{ fontFamily: "serif", paddingRight:"2rem", 
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                color: "black",
+              }}
+                >Iniciar sesión</span>
                 <img
                   src="https://www.svgrepo.com/show/271163/google.svg"
                   alt="Iniciar sesión con Google"
                   className="boton-google"
+
                 />
               </a>
                         </li>

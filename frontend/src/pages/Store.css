@@ -14,3 +14,12 @@
     margin-top: 60px;
   }
   
+.Home {
+  background-image: url(../../public/iniciosesion.jpg);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  background-attachment: fixed;
+  padding-bottom: 38rem;
+
+}

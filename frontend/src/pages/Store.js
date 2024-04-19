@@ -4,7 +4,7 @@ import { getProductsFromStripe } from "../Products";
 import Navbar from "../components/Navbar";
 import { useAuth } from "../firebase/AuthContext";
 import Navbar2 from "../components/Navbar2";
-
+import './Store.css'
 
 
 function Store() {
@@ -70,9 +70,13 @@ function Store() {
                                 </a>
     </div>
 ) : (
-  <div>
+  
+  <div       className="Home"
+  >
+  <div >
     <Navbar2 handleGoogle={handleGoogle}/>
   </div>
+      </div>
 )}
     </>
   );

@@ -1,55 +1,92 @@
 .navbar {
-    background-color: #333;
-  }
+  background-color: #333;
+}
 
-  .navbar-brand {
-    font-family: 'Amatic SC';
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-  }
-  .nav-link {
-    color: #fff;
-  }
+.navbar-brand {
+  font-family: 'Amatic SC';
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+}
+.nav-link {
+  color: #fff;
+}
 
-  .navbar-brand {
-    font-weight: bold;
-  }
+.navbar-brand {
+  font-weight: bold;
+}
 
-  .nav-link {
-    padding: 10px 20px;
-  }
+.nav-link {
+  padding: 10px 20px;
+}
 
-  .btn-dark {
-    background-color: #000;
-  }
+.btn-dark {
+  background-color: #000;
+}
 
-  .navbar {
-    border-bottom: 3px solid #ffc106;
-  }
+.navbar {
+  border-bottom: 3px solid #ffc106;
+}
 
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-  }
-  
-.backdrop {
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
-  z-index: 9999; 
+  z-index: 10000;
 }
 
+.search {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 40px;
+  padding: 10px;
+  margin-right: 10px; 
+}
 
-.zoomed-image {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10000; 
+.search_input {
+  color: rgb(0, 0, 0);
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  margin-top: -10px;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.search .search_input {
+  padding: 0 10px;
+  width: 350px;
+  caret-color: rgb(231, 162, 0);
+  transition: width 0.4s linear;
+}
+
+.search:hover > .search_icon {
+  background: rgb(251, 188, 0);
+  color: #000000;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  margin-top: -8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+}
+
+.navbar-nav .btn-dark {
+  height: auto; 
+  padding: 0.5rem 1rem; 
+}
+
+a:link{
+  text-decoration:none;
 }

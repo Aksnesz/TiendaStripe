@@ -3,13 +3,21 @@ import { Cart } from "../Cart";
 import CartProduct from "../components/CartProduct";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ onSearchChange }) {
   const cart = useContext(Cart);
   const productsCount = cart.items.reduce(
     (sum, product) => sum + product.quantity,
     0
   );
   const [total, setTotal] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+    onSearchChange(event.target.value); 
+  };
+
+  
 
   useEffect(() => {
     const fetchTotal = async () => {
@@ -19,7 +27,6 @@ function Navbar() {
 
     fetchTotal();
   }, [cart]);
-
 
   const checkout = async () => {
     await fetch("http://localhost:4000/checkout", {
@@ -42,8 +49,9 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light"
+   >
+      <div className="container-fluid" >
         <a className="navbar-brand" href="/">
         El Refugio del Guitarrista
         </a>
@@ -67,6 +75,19 @@ function Navbar() {
             </li>
           </ul>
           <ul className="navbar-nav ms-auto">
+          <div className="search">
+              <input
+                className="search_input"
+                type="text"
+                name=""
+                placeholder="Buscar aquí..."
+                value={searchTerm}
+                onChange={handleInputChange} 
+              />
+
+            </div>
+
+            
             <button
               type="button"
               className="btn btn-dark"
@@ -112,7 +133,7 @@ function Navbar() {
                         <h4>
                           Total:{" "}
                           {total.toFixed(2).toString().replace(".", ",").replace(/\,00/, "")}
-                             mxn
+                             mxn
                         </h4>
                       </div>
                     ) : (

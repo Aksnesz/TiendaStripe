@@ -13,13 +13,16 @@ function Product(props) {
 
   return (
     <div className="card mb-2 h-100 border border-2 p-3">
-      <div onClick={toggleModal}>
+      <div 
+      style={{   alignContent: "center", fontSize: "medium" }}
+      onClick={toggleModal}>
         <img
           src={product.image}
           className="cardImage img-fluid"
           alt={product.name}
           style={{ maxHeight: "200px", objectFit: "cover", cursor: "pointer" }}
         />
+        <b>{product.name}</b>
       </div>
       {showModal && (
         <div className="modal" tabIndex="-1" role="dialog" style={{ display: "block" }}>
@@ -36,11 +39,16 @@ function Product(props) {
                   src={product.image}
                   alt={product.name}
                   style={{ maxWidth: "100%", maxHeight: "300px", objectFit: "contain" }}
-                  onClick={toggleModal} // Para cerrar el modal al hacer clic en la imagen ampliada
+                  onClick={toggleModal}
                 />
-                <p>Precio: {product.price} $</p>
-                <p>Descripción: {product.description}</p>
+                <p
+                style={{ fontSize: "large" }}
+                ><b>Precio: $ {product.price} </b></p>
+                <p
+                style={{ textAlign: "justify" }}
+                >{product.description}</p>
                 {quantity > 0 ? (
+                  
                   <div>
                     <p>En el carrito: {quantity}</p>
                     <button
@@ -49,6 +57,7 @@ function Product(props) {
                     >
                       +
                     </button>
+                       
                     <button
                       className="btn btn-danger"
                       onClick={() => cart.removeItem(product.id)}

@@ -78,7 +78,7 @@ function Product(props) {
           </div>
         </div>
       )}
-      {/* Fondo sombreado */}
+      {}
       {showModal && <div className="modal-backdrop fade show" onClick={toggleModal}></div>}
     </div>
   );

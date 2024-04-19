@@ -3,7 +3,7 @@ import { Cart } from "../Cart";
 import CartProduct from "../components/CartProduct";
 import "./Navbar.css";
 
-function Navbar({ onSearchChange, handleLogout }) {
+function Navbar({ onSearchChange }) {
   const cart = useContext(Cart);
   
   const productsCount = cart.items.reduce(
@@ -164,11 +164,6 @@ function Navbar({ onSearchChange, handleLogout }) {
               </div>
             </div>
           </ul>
-          <li className="nav-item">
-                                <a className="navsesion" href="" onClick={handleLogout}>
-                                    Cerrar sesion
-                                </a>
-                            </li>
         </div>
       </div>
     </nav>

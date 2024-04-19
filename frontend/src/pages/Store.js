@@ -65,10 +65,13 @@ function Store() {
           )}
         </div>
       </div>
+      <a className="navsesion" href="" onClick={handleLogout}>
+                                    Cerrar sesion
+                                </a>
     </div>
 ) : (
   <div>
-    <Navbar2 handleGoogle={handleGoogle} handleLogout={handleLogout}/>
+    <Navbar2 handleGoogle={handleGoogle}/>
   </div>
 )}
     </>
